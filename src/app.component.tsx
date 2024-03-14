@@ -10,13 +10,6 @@ const  AppComponent=()=> {
   useSignals();
   const { contextDescription, setContextDescription } = useContext(AppContext);
 
-  // simulate an API call to set the context description
-  useEffect(() => {
-    setTimeout(() => {
-      setContextDescription("Hello from App Component");
-    }, 500);
-  }, [setContextDescription]);
-
   // read context into signal once context has state
   useEffect(() => {
     if (!contextDescription) {
