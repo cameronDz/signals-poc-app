@@ -4,6 +4,7 @@ import {ChangeEvent, useContext, useEffect} from "react";
 import {AppContext} from "./app.context";
 import "./app.styles.css";
 import {useSignals} from "@preact/signals-react/runtime";
+import TextareaWrapperComponent from "./textarea-wrapper.component";
 
 const signalDescription = signal("");
 const  AppComponent=()=> {
@@ -32,7 +33,7 @@ const  AppComponent=()=> {
   return (
     <div className="App">
       <header className="App-header">
-        <TextareaAutosize value={signalDescription.value} onChange={handleChange} />
+        <TextareaWrapperComponent value={signalDescription.value} onChange={handleChange} />
         <p>{`CONTEXT: ${contextDescription}`}</p>
         <p>{`SIGNAL: ${signalDescription}`}</p>
       </header>
