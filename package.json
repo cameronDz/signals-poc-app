@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mui/material": "^5.2.3",
+    "@preact/signals": "^1.2.2",
+    "@preact/signals-react": "^2.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,6 +13,9 @@
     "@types/node": "^16.18.89",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint-config-react-important-stuff": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -17,16 +23,36 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext js,jsx,ts,tsx",
+    "lint:fix": "eslint --fix src --ext js,jsx,ts,tsx",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
+      "eslint:recommended",
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint/eslint-plugin"],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/interface-name-prefix": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-shadow": "error",
+      "@typescript-eslint/no-unused-expressions": "error",
+      "@typescript-eslint/no-unused-vars": ["error", {"argsIgnorePattern": "^_", "destructuredArrayIgnorePattern": "^_"}],
+      "@typescript-eslint/no-var-requires": "error",
+      "@typescript-eslint/quotes": ["error", "double", {"avoidEscape": true, "allowTemplateLiterals": true}],
+      "@typescript-eslint/semi": ["error", "always"],
+      "curly": ["error", "all"],
+      "no-shadow": "off"
+    }
   },
   "browserslist": {
     "production": [
