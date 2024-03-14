@@ -1,10 +1,9 @@
-import { TextareaAutosize } from "@mui/base";
 import {signal} from "@preact/signals";
+import {useSignals} from "@preact/signals-react/runtime";
 import {ChangeEvent, useContext, useEffect} from "react";
+import TextareaWrapperComponent from "./textarea-wrapper.component";
 import {AppContext} from "./app.context";
 import "./app.styles.css";
-import {useSignals} from "@preact/signals-react/runtime";
-import TextareaWrapperComponent from "./textarea-wrapper.component";
 
 const signalDescription = signal("");
 const  AppComponent=()=> {
