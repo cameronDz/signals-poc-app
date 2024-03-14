@@ -7,7 +7,6 @@ import "./app.styles.css";
 
 const signalDescription = signal("");
 const  AppComponent=()=> {
-  useSignals();
   const { contextDescription, setContextDescription } = useContext(AppContext);
 
   // read context into signal once context has state
